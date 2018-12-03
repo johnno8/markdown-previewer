@@ -18,6 +18,7 @@
 header {
   height: 50px;
   color: #a0aabf;
+  padding: 0;
 }
 
 .content {
@@ -27,12 +28,14 @@ header {
 
 .left header {
   border: 1px solid #e8e8e8; 
+  padding: 0;
 }
 
 .right header {
   border-top: 1px solid #e8e8e8;
   border-right: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
+  padding: 0;
 }
 
 textarea {
@@ -40,13 +43,13 @@ textarea {
 }
 
 #editor {
-  border-left: 1px solid #e8e8e8;
-  border-right: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
+  border: 1px solid #e8e8e8;
   padding: 0;
 }
 
 #preview {
   border-right: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
+  border-top: 1px solid #e8e8e8;
+  padding: 0;
 }
