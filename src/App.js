@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import marked from 'marked'; 
 import './App.css';
 
 class App extends Component {
@@ -16,6 +16,11 @@ class App extends Component {
     })
   }
 
+  getMarkdownText = () => {
+    let rawMarkup = marked(this.state.editorInput, { sanitize: true });
+    return { __html: rawMarkup };
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,7 +28,7 @@ class App extends Component {
           input={this.state.editorInput} 
           handleInput={this.handleChange}/>
         <Preview 
-          input={this.state.editorInput}/>
+          input={this.getMarkdownText()}/>
       </div>
     );
   }
@@ -55,8 +60,7 @@ class Preview extends Component {
         <header>
           preview
         </header>
-        <div className="content" id="preview">
-          {this.props.input}
+        <div className="content" id="preview" dangerouslySetInnerHTML={this.props.input}>
         </div>
       </section>
     )
