@@ -2,11 +2,35 @@ import React, { Component } from 'react';
 import marked from 'marked'; 
 import './App.css';
 
+const defaultText = 
+  `# H1 Header 
+## Subheader
+[FreeCodeCamp](https://www.freecodecamp.org) - FCC
+\`<div>Some code here</div>\` 
+\`\`\`sh 
+$ cd dillinger
+$ npm install -d
+$ node app
+\`\`\`
+* Unordered list item
+* Another unordered list item
+1 Ordered sub-list item
+2 Another ordered sub-list item
+
+> Throw in a blockquote
+> still blockquoting
+
+Here's an image:
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+**This is bold text**
+`;
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      editorInput: ''
+      editorInput: defaultText
     }
   }
 
@@ -17,7 +41,11 @@ class App extends Component {
   }
 
   getMarkdownText = () => {
-    let rawMarkup = marked(this.state.editorInput, { sanitize: true });
+    let rawMarkup = marked(this.state.editorInput, {
+      gfm: true,
+      breaks: true,
+      sanitize: true
+    });
     return { __html: rawMarkup };
   }
 
