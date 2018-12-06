@@ -64,17 +64,6 @@ class App extends Component {
 
 class Editor extends Component {
 
-/*<section class="left">
-        <header>
-          markdown
-        </header>
-        <textarea 
-          className="content" id="editor"
-          value={this.props.input}
-          onChange={this.props.handleInput}>
-        </textarea>
-      </section> */
-
   render() {
     return (
       <div class="left">
@@ -91,14 +80,6 @@ class Editor extends Component {
 }
 
 class Preview extends Component {
-
-// <section class="right">
-//   <header>
-//     preview
-//   </header>
-//   <div className="content" id="preview" dangerouslySetInnerHTML={this.props.input}>
-//   </div>
-// </section>
 
   render() {
     return (
