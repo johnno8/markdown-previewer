@@ -1,15 +1,9 @@
 .App {
-  /*min-height: 100vh;*/
   font-size: calc(10px + 2vmin);
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-
-  /*overflow: hidden;*/
+  margin: 10px;
+  background: white;
 }
 
 
@@ -28,35 +22,38 @@
 .header {
   height: 50px;
   color: #a0aabf;
-  padding: 0;
-
   line-height: 50px;
+  padding-left: 10px;
 }
 
 .content {
   overflow: auto;
-  height: calc(100vh - 80px);
-}
-
-
-.left .header {
-
-}
-
-.right .header {   
-
+  height: calc(100vh - 90px);
 }
 
 textarea {
   border: none;
+  padding: 0;
 }
 
 #editor {
-  padding: 0;
+  padding-left: 10px;
+  padding-top: 10px;
   border-top: 1px solid #e8e8e8;
 }
 
 #preview {
-  padding: 0;
+  padding-left: 10px;
+  padding-top: 10px;
   border-top: 1px solid #e8e8e8;
+}
+
+code {
+  background: lightgrey;
+}
+
+pre code {
+  display: block;
+  background: lightgrey;
+  margin-right: 10px;
 }

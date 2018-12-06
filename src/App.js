@@ -5,8 +5,11 @@ import './App.css';
 const defaultText = 
   `# H1 Header 
 ## Subheader
-[FreeCodeCamp](https://www.freecodecamp.org) - FCC
-\`<div>Some code here</div>\` 
+Here's a link [FreeCodeCamp](https://www.freecodecamp.org) - FCC
+
+Inline code \`<div>Some code here</div>\` goes here
+
+Code block:
 \`\`\`sh 
 $ cd dillinger
 $ npm install -d
@@ -24,6 +27,9 @@ Here's an image:
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 **This is bold text**
+
+Bigger image:
+![React Logo w/ Text](https://goo.gl/Umyytc)
 `;
 
 class App extends Component {
@@ -68,7 +74,7 @@ class Editor extends Component {
     return (
       <div class="left">
         <div class="header">
-          left
+          Markdown editor
         </div>
         <textarea className="content" id="editor"
           value={this.props.input}
@@ -85,7 +91,7 @@ class Preview extends Component {
     return (
       <div class="right">
         <div class="header">  
-          right
+          Preview
         </div>
         <div className="content" id="preview" dangerouslySetInnerHTML={this.props.input}>
         </div>
