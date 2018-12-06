@@ -8,17 +8,21 @@
 .left {
   display: grid;
   grid-template-rows: auto auto; 
+  border: 1px solid #e8e8e8;
 }
 
 .right {
   display: grid;
   grid-template-rows: auto auto; 
+  border: 1px solid #e8e8e8;
 }
 
-header {
+.header {
   height: 50px;
   color: #a0aabf;
   padding: 0;
+
+  line-height: 50px;
 }
 
 .content {
@@ -26,16 +30,13 @@ header {
   height: calc(100vh - 70px);
 }
 
-.left header {
-  border: 1px solid #e8e8e8; 
-  padding: 0;
+
+.left .header {
+
 }
 
-.right header {
-  border-top: 1px solid #e8e8e8;
-  border-right: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 0;
+.right .header {   
+
 }
 
 textarea {
@@ -43,13 +44,11 @@ textarea {
 }
 
 #editor {
-  border: 1px solid #e8e8e8;
   padding: 0;
+  border-top: 1px solid #e8e8e8;
 }
 
 #preview {
-  border-right: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
-  border-top: 1px solid #e8e8e8;
   padding: 0;
+  border-top: 1px solid #e8e8e8;
 }
