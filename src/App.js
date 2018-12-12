@@ -30,7 +30,7 @@ Here's an image:
 
 Bigger image:
 ![React Logo w/ Text](https://goo.gl/Umyytc)
-`;
+`; 
 
 class App extends Component {
   constructor(props) {
@@ -55,8 +55,12 @@ class App extends Component {
     return { __html: rawMarkup };
   }
 
-  numChars = () => {
+  charCount = () => {
     return this.state.editorInput.length ? this.state.editorInput.length : 0;
+  }
+
+  wordCount = () => {
+    return this.state.editorInput.length ? this.state.editorInput.match(/[^\s]+/g).length : 0;
   }
 
   render() {
@@ -65,7 +69,8 @@ class App extends Component {
         <Editor
           input={this.state.editorInput} 
           handleInput={this.handleChange}
-          numChars={this.numChars()}/>
+          charCount={this.charCount()}
+          wordCount={this.wordCount()}/>
         <Preview 
           input={this.getMarkdownText()}/>
       </div>
@@ -79,8 +84,8 @@ class Editor extends Component {
     return (
       <div class="left">
         <div class="header">
-          <div class="header-title">Markdown editor</div>
-          <div class="char-count">Characters: {this.props.numChars}</div>
+          <div class="header-title">Markdown editor &nbsp;&nbsp; Words: {this.props.wordCount}</div>
+          <div class="char-count">Characters: {this.props.charCount}</div>
         </div>
         <textarea className="content" id="editor"
           value={this.props.input}
