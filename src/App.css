@@ -31,15 +31,33 @@
 .header {
   height: 50px;
   color: #a0aabf;
-  line-height: 50px;
+  /*line-height: 50px;*/
   padding-left: 10px;
   display: flex;
 }
 
-.char-count {
+.header-title, .right .header {
+  line-height: 50px;
+}
+
+.counts {
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
+}
+
+.char-count {
+  /*margin-left: auto;*/
   margin-right: 10px;
-  font-size: calc(2px + 2vmin);
+  font-size: calc(1px + 1.5vmin);
+  height: 25px;
+  line-height: 25px;
+}
+
+.word-count {
+  font-size: calc(1px + 1.5vmin);
+  height: 25px;
+  line-height: 25px;
 }
 
 .content {

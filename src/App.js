@@ -84,8 +84,11 @@ class Editor extends Component {
     return (
       <div class="left">
         <div class="header">
-          <div class="header-title">Markdown editor &nbsp;&nbsp; Words: {this.props.wordCount}</div>
-          <div class="char-count">Characters: {this.props.charCount}</div>
+          <div class="header-title">Markdown editor</div>
+          <div class="counts">
+            <div class="char-count">Characters: {this.props.charCount}</div>
+            <div class="word-count">Words: {this.props.wordCount}</div>
+          </div>
         </div>
         <textarea className="content" id="editor"
           value={this.props.input}
