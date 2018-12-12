@@ -66,13 +66,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Editor
-          input={this.state.editorInput} 
-          handleInput={this.handleChange}
-          charCount={this.charCount()}
-          wordCount={this.wordCount()}/>
-        <Preview 
-          input={this.getMarkdownText()}/>
+        <div className="title-bar">
+          React Markdown Previewer
+        </div>
+        <div className="inner-container">
+          <Editor
+            input={this.state.editorInput} 
+            handleInput={this.handleChange}
+            charCount={this.charCount()}
+            wordCount={this.wordCount()}/>
+          <Preview 
+            input={this.getMarkdownText()}/>
+        </div>
       </div>
     );
   }
