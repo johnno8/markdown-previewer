@@ -55,12 +55,17 @@ class App extends Component {
     return { __html: rawMarkup };
   }
 
+  numChars = () => {
+    return this.state.editorInput.length ? this.state.editorInput.length : 0;
+  }
+
   render() {
     return (
       <div className="App">
         <Editor
           input={this.state.editorInput} 
-          handleInput={this.handleChange}/>
+          handleInput={this.handleChange}
+          numChars={this.numChars()}/>
         <Preview 
           input={this.getMarkdownText()}/>
       </div>
@@ -74,7 +79,7 @@ class Editor extends Component {
     return (
       <div class="left">
         <div class="header">
-          Markdown editor
+          Markdown editor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Characters: {this.props.numChars}
         </div>
         <textarea className="content" id="editor"
           value={this.props.input}
