@@ -5,7 +5,7 @@ import './App.css';
 const defaultText = 
   `# H1 Header 
 ## Subheader
-Here's a link [FreeCodeCamp](https://www.freecodecamp.org) - FCC
+Here's a link [Marked](https://marked.js.org/#/README.md) - marked.js
 
 Inline code \`<div>Some code here</div>\` goes here
 
