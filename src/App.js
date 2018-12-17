@@ -47,7 +47,14 @@ class App extends Component {
   }
 
   getMarkdownText = () => {
-    let rawMarkup = marked(this.state.editorInput, {
+    const renderer = new marked.Renderer();
+    renderer.link = function (href, title, text) {
+      const link = marked.Renderer.prototype.link.call(this, href, title, text);
+      return `<a target="_blank" href="${href}">${text}</a>`;
+    }
+
+    const rawMarkup = marked(this.state.editorInput, {
+      renderer: renderer,
       gfm: true,
       breaks: true,
       sanitize: true
